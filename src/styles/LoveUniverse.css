@@ -1,0 +1,211 @@
+.love-universe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #1a0b2e 0%, #000000 100%);
+    z-index: 10;
+}
+
+.universe-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 3px),
+        radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 2px),
+        radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 3px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    animation: starMove 100s linear infinite;
+}
+
+@keyframes starMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-2000px);
+    }
+}
+
+.floating-memory {
+    position: absolute;
+    width: 150px;
+    cursor: grab;
+    border: 4px solid white;
+    border-radius: 8px;
+    background: white;
+    transform: rotate(var(--rotation, 0deg));
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-memory img {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+}
+
+.memory-tooltip {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 4px;
+    width: 150px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    color: black;
+}
+
+.floating-memory:hover .memory-tooltip {
+    opacity: 1;
+}
+
+.love-star {
+    position: absolute;
+    color: #ffd700;
+    font-size: 10px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #ffd700;
+    z-index: 5;
+}
+
+.star-tooltip {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 11, 46, 0.9);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border: 1px solid var(--color-accent);
+}
+
+.love-star:hover .star-tooltip {
+    opacity: 1;
+}
+
+.center-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.center-message h1 {
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.floating-quote {
+    position: absolute;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    max-width: 300px;
+    text-align: center;
+    font-style: italic;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    backdrop-filter: blur(2px);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(var(--rotation));
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(var(--rotation));
+    }
+}
+
+.floating-bottle {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 20;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.bottle-label {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: black;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.floating-bottle:hover .bottle-label {
+    opacity: 1;
+}
+
+.letter-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    backdrop-filter: blur(5px);
+}
+
+.letter-modal-content {
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+}

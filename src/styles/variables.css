@@ -1,0 +1,47 @@
+:root {
+    /* Colors */
+    --color-primary: #e63946;
+    /* Deep Red */
+    --color-secondary: #ffccd5;
+    /* Soft Pink */
+    --color-accent: #d4af37;
+    /* Gold */
+    --color-bg-dark: #1a0b2e;
+    /* Deep Purple/Black */
+    --color-text-light: #fff0f5;
+    /* Lavender Blush */
+    --color-glass: rgba(255, 255, 255, 0.1);
+    --color-heart: #ff4d6d;
+
+    /* Gradients */
+    --gradient-bg: linear-gradient(135deg, #1a0b2e 0%, #430f58 100%);
+    --gradient-gold: linear-gradient(45deg, #ffd700, #fdb931);
+    --gradient-text: linear-gradient(to right, #ffccd5, #fff0f5);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-handwriting: 'Dancing Script', cursive;
+
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    /* Z-Index */
+    --z-background: -1;
+    --z-content: 10;
+    --z-overlay: 100;
+    --z-modal: 1000;
+}
+
+[data-theme='light'] {
+    --color-bg-dark: #fff0f5;
+    --color-text-light: #1a0b2e;
+    --gradient-bg: linear-gradient(135deg, #fff0f5 0%, #ffccd5 100%);
+}

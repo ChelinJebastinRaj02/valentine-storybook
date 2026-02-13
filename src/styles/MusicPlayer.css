@@ -1,0 +1,141 @@
+.music-player-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: var(--z-overlay);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.music-toggle {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+}
+
+.music-toggle svg {
+    color: #1a0b2e;
+    font-size: 1.2rem;
+}
+
+.spin {
+    animation: spin 4s linear infinite;
+}
+
+.music-player-body {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 250px;
+    background: rgba(26, 11, 46, 0.95);
+    padding: 15px;
+    border-radius: 12px;
+    transform-origin: bottom right;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--color-text-light);
+}
+
+.music-player-container.open .music-player-body {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.now-playing {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.track-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-primary);
+}
+
+.track-info p {
+    margin: 5px 0 10px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.controls button {
+    color: white;
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.controls button:hover {
+    opacity: 1;
+}
+
+.play-btn {
+    font-size: 1.2rem;
+    width: 35px;
+    height: 35px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist h5 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+}
+
+.playlist ul {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.playlist li {
+    font-size: 0.8rem;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.playlist li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.playlist li.active {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

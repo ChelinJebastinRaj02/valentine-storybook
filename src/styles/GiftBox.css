@@ -1,0 +1,162 @@
+.gift-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gift-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    perspective: 1000px;
+    transition: transform 0.5s ease;
+}
+
+.gift-container:hover:not(.open) {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.gift-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+}
+
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%;
+    background: var(--color-primary);
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gift-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30px;
+    height: 100%;
+    background: var(--color-accent);
+    transform: translateX(-50%);
+}
+
+.gift-lid {
+    position: absolute;
+    top: 0;
+    width: 110%;
+    left: -5%;
+    height: 25%;
+    background: #d62839;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+.gift-lid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30px;
+    height: 100%;
+    background: var(--color-accent);
+    transform: translateX(-50%);
+}
+
+.gift-bow {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 80px;
+    height: 40px;
+    transform: translateX(-50%);
+}
+
+.gift-bow::before,
+.gift-bow::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    border-radius: 50% 50% 0 0;
+    background: var(--color-accent);
+    border: 2px solid #b89823;
+}
+
+.gift-bow::before {
+    left: 0;
+    transform: skew(10deg);
+}
+
+.gift-bow::after {
+    right: 0;
+    transform: skew(-10deg);
+}
+
+/* Open State */
+.gift-container.open .gift-box {
+    opacity: 0;
+    transform: scale(0.5);
+    pointer-events: none;
+}
+
+.gift-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: var(--color-text-dark);
+    width: 300px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gift-container.open .gift-content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.gift-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.gift-card p {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.coupon {
+    border: 2px dashed var(--color-accent);
+    padding: 15px;
+    background: #fffdf5;
+    margin-top: 15px;
+}
+
+.coupon strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #d62839;
+}
+
+.click-hint {
+    margin-top: 50px;
+    opacity: 0.8;
+    animation: pulse 2s infinite;
+}

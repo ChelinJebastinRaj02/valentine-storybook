@@ -1,0 +1,36 @@
+.exploding-heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+.giant-heart {
+    font-size: 15vw;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.click-me-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-handwriting);
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 0 10px black;
+    pointer-events: none;
+    white-space: nowrap;
+}
